@@ -18,12 +18,6 @@ fetch(url)
       county = county.properties.NAME;
       counties.push(county);
     });
-
-    //['cb_2015_minnesota_county/_20m.geometries;
-    // data'].forEach(county => {
-    //   county = county.properties.NAME;
-    //   counties.push(county);
-    // });
   })
   .then(() => {
     counties;
