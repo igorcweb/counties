@@ -2,7 +2,7 @@ const counties = [];
 
 let $state = 'texas';
 let stateCode = 'TX';
-let stateId = '48';
+let stateId = 48;
 
 const url = `https://raw.githubusercontent.com/igorcweb/topojson/master/countries/us-states/${stateCode}-${stateId}-${$state}-counties.json`;
 
