@@ -1,20 +1,19 @@
 const counties = [];
 
-let $state = 'wyoming';
+let $state = 'Puerto Rico';
 
-let url =
-  $state !== 'louisiana'
-    ? `https://raw.githubusercontent.com/igorcweb/topojson/master/countries/us-states/${$state}-counties.json`
-    : `https://raw.githubusercontent.com/igorcweb/topojson/master/countries/us-states/louisiana-parishes.json`;
+$state = $state.replace(' ', '-').toLowerCase();
+
+const url =
+  $state === 'louisiana'
+    ? `https://raw.githubusercontent.com/igorcweb/topojson/master/countries/us-states/louisiana-parishes.json`
+    : $state === 'puerto-rico'
+    ? `https://raw.githubusercontent.com/igorcweb/topojson/master/countries/us-states/puerto-rico-municipios.json`
+    : `https://raw.githubusercontent.com/igorcweb/topojson/master/countries/us-states/${$state}-counties.json`;
 
 fetch(url)
   .then(response => response.json())
   .then(myJson => {
-    // let data;
-    if ($state.indexOf('-') !== -1) {
-      $state.replace('-', '_');
-    }
-
     const data =
       $state !== 'louisiana'
         ? myJson.objects[`cb_2015_${$state}_county_20m`].geometries
