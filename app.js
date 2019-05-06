@@ -1,6 +1,6 @@
 const counties = [];
 
-let $state = 'Puerto Rico';
+let $state = 'New York';
 
 $state = $state.replace(' ', '-').toLowerCase();
 
